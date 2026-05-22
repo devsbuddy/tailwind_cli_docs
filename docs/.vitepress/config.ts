@@ -1,10 +1,11 @@
+const version = "v0.7.x";
+
 export default {
   title: "TailwindCLI",
-  description: "Just playing around.",
-  base: "/tailwind-cli/",
+  description: "Build awesome flutter apps with tailwind styles",
   cleanUrls: true,
   srcDir: "./src",
-  outDir: "./.vitepress/tailwind-cli",
+  base: "/docs/",
   markdown: {
     lineNumbers: true,
     defaultHighlightLang: "dart",
@@ -15,20 +16,25 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/tailwind-cli/images/favicon.png",
+        href: "/images/favicon.png",
       },
     ],
     [
       "script",
       {
         async: true,
-        src: "https://www.googletagmanager.com/gtag/js?id=G-GKNMVN5QK0",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-C8ZWJ3ZZEY",
       },
     ],
     [
       "script",
       {},
-      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-GKNMVN5QK0');",
+      [
+        "window.dataLayer = window.dataLayer || [];",
+        "function gtag(){dataLayer.push(arguments);}",
+        "gtag('js', new Date());",
+        "gtag('config', 'G-C8ZWJ3ZZEY');",
+      ].join("\n"),
     ],
   ],
   themeConfig: {
@@ -48,22 +54,19 @@ export default {
     nav: [
       {
         text: "Home",
-        link: "/",
+        link: "https://tailwind-cli.devsbuddy.com",
+        target: "_self",
       },
       {
         text: "Docs",
-        link: "/introduction",
+        link: "/",
       },
       {
-        text: "Blog",
-        link: "https://devsbuddy.com/blog",
-      },
-      {
-        text: "0.7.5",
+        text: version,
         items: [
           {
             text: "Changelog",
-            link: "https://github.com/thedevsbuddy/tailwind_cli/blob/main/CHANGELOG.md",
+            link: `https://github.com/devsbuddy/tailwind_cli/blob/${version}/CHANGELOG.md`,
           },
         ],
       },
@@ -71,7 +74,7 @@ export default {
     sidebar: [
       {
         text: "Introduction",
-        link: "/introduction",
+        link: "/",
       },
       {
         text: "Installation",
